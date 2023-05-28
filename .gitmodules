@@ -1,0 +1,3 @@
+[submodule "soleng"]
+	path = soleng
+	url = https://github.com/nebunite/soleng
