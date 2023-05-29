@@ -56,14 +56,29 @@ Game.Scene = {
 					)
 				}
 			}
-		})
+		}
+    ),
+    CorpGeneral: new Soleng.Scene(
+        Game.Display,
+        "Corporation Screen",
+        {
+            enterScene: function (corp) {
+                this.Sprites = [
+                    new Soleng.Graphics.Shape.Value(
+                        10, 10, corp, 'funds', 'white'
+                    )
+                ]
+                
+            }
+        }
+    )
 }
 
 document.body.appendChild(Game.Display.Canvas);
 // Game.Scene.WorldMap.enterScene(Game.World.Stars)
 // Game.Scene.WorldMap.renderScene()
-Game.Scene.LocalMap.enterScene(Game.World.Stars[0])
-Game.Scene.LocalMap.renderScene()
+// Game.Scene.LocalMap.enterScene(Game.World.Stars[0])
+// Game.Scene.LocalMap.renderScene()
 
 let corp = new Soleng.Economics.Corporations.Subsidiary()
 
@@ -71,3 +86,7 @@ corp.operate(100)
 
 console.log(corp.funds)
 console.log(corp.log.Log[3])
+
+
+Game.Scene.CorpGeneral.enterScene(corp)
+Game.Scene.CorpGeneral.renderScene()
