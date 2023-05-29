@@ -70,3 +70,4 @@ let corp = new Soleng.Economics.Corporations.Subsidiary()
 corp.operate(100)
 
 console.log(corp.funds)
+console.log(corp.log.Log[3])
