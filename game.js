@@ -64,3 +64,9 @@ document.body.appendChild(Game.Display.Canvas);
 // Game.Scene.WorldMap.renderScene()
 Game.Scene.LocalMap.enterScene(Game.World.Stars[0])
 Game.Scene.LocalMap.renderScene()
+
+let corp = new Soleng.Economics.Corporations.Subsidiary()
+
+corp.operate(100)
+
+console.log(corp.funds)
