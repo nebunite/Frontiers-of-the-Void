@@ -2,6 +2,8 @@
 const Game = {}
 Game.Log = new Soleng.Events.Observer()
 Game.Display = new Soleng.Display(800, 600, Game.Log)
+Game.Display.addFont("loja", "fonts/loja.otf")
+Game.Display.addFont("azonix", "fonts/azonix.otf")
 Game.World = new Soleng.WorldGeneration.Constellation(800, 600, 50)
 Game.Scene = {
 	WorldMap: new Soleng.Scene(
@@ -73,7 +75,6 @@ Game.Scene = {
         }
     )
 }
-
 document.body.appendChild(Game.Display.Canvas);
 // Game.Scene.WorldMap.enterScene(Game.World.Stars)
 // Game.Scene.WorldMap.renderScene()
@@ -86,7 +87,6 @@ corp.operate(100)
 
 console.log(corp.funds)
 console.log(corp.log.Log[3])
-
 
 Game.Scene.CorpGeneral.enterScene(corp)
 Game.Scene.CorpGeneral.renderScene()
